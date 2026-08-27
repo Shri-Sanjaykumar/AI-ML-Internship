@@ -1,37 +1,72 @@
-# AI/ML Learning Repository
+# AI/ML Internship — Learning & Practice Repository
 
-Welcome to my personal AI/ML learning repository.
-
-This space is dedicated to documenting my learning journey, practicing Python programming, and working on machine learning exercises alongside my internship training.
-
----
-
-## 👨‍💻 Intern Profile
+## 👨‍💻 Introduction
 
 - **Name:** Shri Sanjaykumar V
 - **Role:** AI/ML Intern
 - **Organization:** Linkific
+- **Internship:** AI/ML Internship
+- **Current Phase:** Training / Onboarding
+
+I am currently starting my AI/ML internship at Linkific. I am using this repository to document my day-to-day learning, practice programming, and maintain hands-on implementations as I progress through the training phase.
 
 ---
 
-## 📌 Learning Progress
+## 🎯 Internship Goals
 
-### 🎯 Current Focus (Day 1)
-- [x] AI/ML fundamentals (understanding AI vs. ML vs. DL vs. GenAI)
-- [x] Python programming environment
-- [x] Git & GitHub workflows for version control
-- [x] Development environment setup & verification
-
-### ⏳ Upcoming Topics
-- [ ] Machine Learning fundamentals (Supervised & Unsupervised Learning)
-- [ ] Data preprocessing and analysis (NumPy & Pandas)
-- [ ] Model training, evaluation, and tuning
-- [ ] Deep Learning basics (Neural Networks)
-- [ ] Generative AI concepts
+- Strengthen Python fundamentals for AI/ML.
+- Understand Machine Learning fundamentals.
+- Learn data handling and preprocessing.
+- Understand Deep Learning concepts.
+- Explore Generative AI.
+- Improve practical problem-solving skills.
+- Learn to use Git and GitHub effectively.
+- Build small practical AI/ML implementations as I progress.
 
 ---
 
-## 📂 Repository Structure
+## 📖 Current Learning
 
-- `README.md` — Overview of learning roadmap and current progress.
-- *Hands-on scripts, notebooks, and practice exercises will be added progressively as each topic is covered.*
+- AI/ML fundamentals
+- Python
+- Git & GitHub
+- Development environment setup
+
+---
+
+## 🧭 Learning Direction
+
+```text
+Python → Data Handling → Machine Learning → Deep Learning → Generative AI → Practical Projects
+```
+
+> *Note: This represents my planned learning progression during the internship, not a list of completed technologies.*
+
+---
+
+## 🔗 Learning References
+
+I referred to online tutorials and learning resources while getting started with AI/ML:
+
+- [Krish Naik](https://www.youtube.com/@krishnaik06)
+- [CampusX](https://www.youtube.com/@CampusX-official)
+- [Codebasics](https://www.youtube.com/@codebasics)
+- [Tech With Tim](https://www.youtube.com/@TechWithTim)
+- [freeCodeCamp](https://www.youtube.com/@freecodecamp)
+
+---
+
+## 📌 Repository Purpose
+
+This repository will contain my AI/ML learning notes, experiments, notebooks, and practical work as the internship progresses. Practice scripts and exercises will be added progressively as each module is covered.
+
+---
+
+## 📊 Progress
+
+| Stage | Status |
+| :--- | :--- |
+| Internship onboarding | Completed |
+| AI/ML fundamentals | Started |
+| Development environment | Set up |
+| Practical AI/ML work | Upcoming |
