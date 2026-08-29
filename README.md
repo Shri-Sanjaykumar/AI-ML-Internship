@@ -28,7 +28,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 ## 📖 Current Learning
 
 - AI/ML fundamentals
-- Python
+- Python (variables, conditionals, loops, functions)
 - Git & GitHub
 - Development environment setup
 
@@ -48,6 +48,7 @@ Python → Data Handling → Machine Learning → Deep Learning → Generative A
 
 I referred to online tutorials and learning resources while getting started with AI/ML:
 
+- [Programming with Mosh](https://www.youtube.com/@programmingwithmosh)
 - [Krish Naik](https://www.youtube.com/@krishnaik06)
 - [CampusX](https://www.youtube.com/@CampusX-official)
 - [Codebasics](https://www.youtube.com/@codebasics)
@@ -67,6 +68,7 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Stage | Status |
 | :--- | :--- |
 | Internship onboarding | Completed |
-| AI/ML fundamentals | Started |
+| AI/ML fundamentals | Completed |
 | Development environment | Set up |
+| Python fundamentals (Day 2) | Practiced |
 | Practical AI/ML work | Upcoming |
