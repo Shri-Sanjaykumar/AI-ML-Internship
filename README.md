@@ -28,7 +28,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 ## 📖 Current Learning
 
 - AI/ML fundamentals
-- Python (variables, conditionals, loops, functions)
+- Python (variables, data structures, functions, file handling)
 - Git & GitHub
 - Development environment setup
 
@@ -70,5 +70,6 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Internship onboarding | Completed |
 | AI/ML fundamentals | Completed |
 | Development environment | Set up |
-| Python fundamentals (Day 2) | Practiced |
+| Python fundamentals (Day 2) | Completed |
+| Data structures & file handling (Day 3) | Practiced |
 | Practical AI/ML work | Upcoming |
