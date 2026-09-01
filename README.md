@@ -29,6 +29,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 
 - AI/ML fundamentals
 - Python (variables, data structures, functions, file handling)
+- NumPy (1D & 2D arrays, indexing, slicing, mathematical operations)
 - Git & GitHub
 - Development environment setup
 
@@ -37,7 +38,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 ## 🧭 Learning Direction
 
 ```text
-Python → Data Handling → Machine Learning → Deep Learning → Generative AI → Practical Projects
+Python → Data Handling (NumPy/Pandas) → Machine Learning → Deep Learning → Generative AI → Practical Projects
 ```
 
 > *Note: This represents my planned learning progression during the internship, not a list of completed technologies.*
@@ -48,6 +49,7 @@ Python → Data Handling → Machine Learning → Deep Learning → Generative A
 
 I referred to online tutorials and learning resources while getting started with AI/ML:
 
+- [NumPy Official Documentation — Getting Started](https://numpy.org/doc/stable/user/absolute_beginners.html)
 - [Programming with Mosh](https://www.youtube.com/@programmingwithmosh)
 - [Krish Naik](https://www.youtube.com/@krishnaik06)
 - [CampusX](https://www.youtube.com/@CampusX-official)
@@ -71,5 +73,6 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | AI/ML fundamentals | Completed |
 | Development environment | Set up |
 | Python fundamentals (Day 2) | Completed |
-| Data structures & file handling (Day 3) | Practiced |
+| Data structures & file handling (Day 3) | Completed |
+| NumPy fundamentals (Day 4) | Practiced |
 | Practical AI/ML work | Upcoming |
