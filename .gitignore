@@ -16,3 +16,8 @@ env/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local exported charts
+charts/
+Day-6/charts/
+Python/Day-6/charts/

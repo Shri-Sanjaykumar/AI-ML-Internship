@@ -31,6 +31,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 - Python (variables, data structures, functions, file handling)
 - NumPy (1D & 2D arrays, indexing, slicing, math operations)
 - Pandas (DataFrames, CSV loading, null detection, filtering, summary statistics)
+- Data Visualization (Matplotlib & Seaborn: Bar, Line, Histogram, Pie charts)
 - Git & GitHub
 - Development environment setup
 
@@ -39,7 +40,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 ## 🧭 Learning Direction
 
 ```text
-Python → Data Handling (NumPy/Pandas) → Machine Learning → Deep Learning → Generative AI → Practical Projects
+Python → Data Handling (NumPy/Pandas) → Data Visualization (Matplotlib/Seaborn) → Machine Learning → Deep Learning → Generative AI → Practical Projects
 ```
 
 > *Note: This represents my planned learning progression during the internship, not a list of completed technologies.*
@@ -50,6 +51,8 @@ Python → Data Handling (NumPy/Pandas) → Machine Learning → Deep Learning �
 
 I referred to online tutorials and learning resources while getting started with AI/ML:
 
+- [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
+- [Seaborn Documentation](https://seaborn.pydata.org/)
 - [Pandas Official Documentation — DataFrame Basics](https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe)
 - [NumPy Official Documentation — Getting Started](https://numpy.org/doc/stable/user/absolute_beginners.html)
 - [Programming with Mosh](https://www.youtube.com/@programmingwithmosh)
@@ -77,5 +80,6 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Python fundamentals (Day 2) | Completed |
 | Data structures & file handling (Day 3) | Completed |
 | NumPy fundamentals (Day 4) | Completed |
-| Pandas & basic data analysis (Day 5) | Practiced |
+| Pandas & basic data analysis (Day 5) | Completed |
+| Data visualization (Day 6) | Practiced |
 | Practical AI/ML work | Upcoming |
