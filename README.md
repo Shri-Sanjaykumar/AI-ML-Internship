@@ -32,6 +32,7 @@ I am currently starting my AI/ML internship at Linkific. I am using this reposit
 - NumPy (1D & 2D arrays, indexing, slicing, math operations)
 - Pandas (DataFrames, CSV loading, null detection, filtering, summary statistics)
 - Data Visualization (Matplotlib & Seaborn: Bar, Line, Histogram, Pie charts)
+- Applied Data Analysis (Week 1 Mini Project: Student Performance Analysis Dashboard)
 - Git & GitHub
 - Development environment setup
 
@@ -81,5 +82,6 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Data structures & file handling (Day 3) | Completed |
 | NumPy fundamentals (Day 4) | Completed |
 | Pandas & basic data analysis (Day 5) | Completed |
-| Data visualization (Day 6) | Practiced |
+| Data visualization (Day 6) | Completed |
+| Week 1 Mini Project: Student Performance Analysis (Day 7) | Completed |
 | Practical AI/ML work | Upcoming |

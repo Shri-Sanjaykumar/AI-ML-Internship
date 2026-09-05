@@ -10,14 +10,27 @@ env/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
+*/.ipynb_checkpoints/*
 
-# IDE / OS files
+# IDE and Editor configurations
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Operating System Files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Environment Variables and Credentials
+.env
+*.env
+secrets.json
+
+# Logs
+*.log
 
 # Local exported charts
-charts/
 Day-6/charts/
 Python/Day-6/charts/
