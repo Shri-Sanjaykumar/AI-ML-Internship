@@ -84,4 +84,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Pandas & basic data analysis (Day 5) | Completed |
 | Data visualization (Day 6) | Completed |
 | Week 1 Mini Project: Student Performance Analysis (Day 7) | Completed |
+| Data preprocessing & data cleaning (Day 8) | Completed |
 | Practical AI/ML work | Upcoming |
