@@ -86,4 +86,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Week 1 Mini Project: Student Performance Analysis (Day 7) | Completed |
 | Data preprocessing & data cleaning (Day 8) | Completed |
 | Exploratory data analysis (Day 9) | Completed |
+| Machine learning practice: Linear Regression (Day 10) | Completed |
 | Practical AI/ML work | Upcoming |
