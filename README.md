@@ -87,4 +87,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Data preprocessing & data cleaning (Day 8) | Completed |
 | Exploratory data analysis (Day 9) | Completed |
 | Machine learning practice: Linear Regression (Day 10) | Completed |
+| Classification practice: Logistic Regression & Decision Tree (Day 11) | Completed |
 | Practical AI/ML work | Upcoming |
