@@ -88,4 +88,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Exploratory data analysis (Day 9) | Completed |
 | Machine learning practice: Linear Regression (Day 10) | Completed |
 | Classification practice: Logistic Regression & Decision Tree (Day 11) | Completed |
+| Classification model evaluation: Metrics & Confusion Matrix (Day 12) | Completed |
 | Practical AI/ML work | Upcoming |
