@@ -89,4 +89,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Machine learning practice: Linear Regression (Day 10) | Completed |
 | Classification practice: Logistic Regression & Decision Tree (Day 11) | Completed |
 | Classification model evaluation: Metrics & Confusion Matrix (Day 12) | Completed |
+| Natural Language Processing (NLP) Practice: Text Preprocessing & TF-IDF (Day 13) | Completed |
 | Practical AI/ML work | Upcoming |
