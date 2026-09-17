@@ -15,11 +15,11 @@
     ],
     "answer": "Daily Submission Deadline",
     "evaluation": {
-      "relevance": 4.0,
-      "correctness": 4.5,
-      "completeness": 4.2,
+      "relevance": 4.72,
+      "correctness": 5.0,
+      "completeness": 4.0,
       "grounding": 5.0,
-      "overall_score": 4.42
+      "overall_score": 4.68
     }
   },
   {
@@ -38,11 +38,11 @@
     ],
     "answer": "they remain responsible for completing all missed technical modules",
     "evaluation": {
-      "relevance": 4.0,
-      "correctness": 4.5,
-      "completeness": 4.2,
+      "relevance": 4.44,
+      "correctness": 5.0,
+      "completeness": 5.0,
       "grounding": 5.0,
-      "overall_score": 4.42
+      "overall_score": 4.86
     }
   },
   {
@@ -61,11 +61,11 @@
     ],
     "answer": "Implement baseline models, engineer relevant features, and optimize model parameters",
     "evaluation": {
-      "relevance": 4.0,
-      "correctness": 4.5,
+      "relevance": 3.75,
+      "correctness": 5.0,
       "completeness": 4.2,
       "grounding": 5.0,
-      "overall_score": 4.42
+      "overall_score": 4.49
     }
   },
   {
@@ -84,11 +84,11 @@
     ],
     "answer": "validation steps",
     "evaluation": {
-      "relevance": 4.0,
-      "correctness": 4.5,
+      "relevance": 4.72,
+      "correctness": 3.5,
       "completeness": 4.2,
       "grounding": 5.0,
-      "overall_score": 4.42
+      "overall_score": 4.35
     }
   },
   {
@@ -107,11 +107,11 @@
     ],
     "answer": "- Submit digital identity and internship acceptance verification",
     "evaluation": {
-      "relevance": 4.0,
-      "correctness": 4.5,
-      "completeness": 4.2,
+      "relevance": 4.06,
+      "correctness": 5.0,
+      "completeness": 5.0,
       "grounding": 5.0,
-      "overall_score": 4.42
+      "overall_score": 4.76
     }
   }
 ]

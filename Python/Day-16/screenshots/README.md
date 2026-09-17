@@ -12,14 +12,14 @@ This directory contains visual execution evidence, architectural diagrams, and e
   3. Dense Vector Embeddings (`sentence-transformers/all-MiniLM-L6-v2`, 384 dimensions)
   4. Vector Database Indexing (ChromaDB collection & FAISS index)
   5. Semantic Retrieval (Cosine similarity / L2 distance ranking)
-  6. Grounded Answer Generation (T5 Seq2Seq LM conditioned strictly on retrieved context)
+  6. Context-Grounded Answer Generation (T5 Seq2Seq LM conditioned on retrieved context)
 
 ---
 
 ## 2. Chunk Size Performance Comparison
 ![Chunk Size Comparison](chunk_size_comparison.png)
 - **Description:** Comparative evaluation of Overall Score and Completeness Score across the three tested chunk sizes (200, 400, and 800 characters).
-- **Key Finding:** Chunk Size 400 achieved the highest overall score (**4.72 / 5.00**) and highest completeness (**4.60 / 5.00**), balancing granular semantic relevance with sufficient contextual scope.
+- **Key Finding:** For this demonstration dataset and evaluation set, Chunk Size 800 achieved the highest overall score (**4.63 / 5.00**) and highest relevance (**4.34 / 5.00**), providing the best observed balance between retrieval relevance and response completeness without fragmenting procedural instructions. Chunk Size 400 scored **4.48 / 5.00**, while Chunk Size 200 scored **4.05 / 5.00** due to procedural list fragmentation.
 
 ---
 

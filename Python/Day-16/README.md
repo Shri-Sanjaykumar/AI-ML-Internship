@@ -10,7 +10,7 @@
 
 ## Objective
 
-The objective of Day 16 is to construct an end-to-end **Retrieval-Augmented Generation (RAG)** pipeline that connects organizational demonstration documentation to a language model. The pipeline dynamically processes user queries, executes dense vector similarity search over chunked document embeddings, retrieves top relevant context, and generates grounded, factual answers while eliminating hallucinations.
+The objective of Day 16 is to construct an end-to-end **Retrieval-Augmented Generation (RAG)** pipeline that connects organizational demonstration documentation to a language model. The pipeline dynamically processes user queries, executes dense vector similarity search over chunked document embeddings, retrieves top relevant context, and generates context-grounded answers. In addition, we empirically evaluate three chunk sizes (200, 400, and 800 characters) across five benchmark questions to **identify the best-performing chunk-size configuration for the selected demonstration dataset and evaluation questions**.
 
 ---
 
@@ -22,7 +22,7 @@ The objective of Day 16 is to construct an end-to-end **Retrieval-Augmented Gene
 4. **FAISS:** Implement Meta's Facebook AI Similarity Search (FAISS) library as a high-performance vector retrieval engine.
 5. **Semantic Search:** Differentiate keyword-based lexical search from embedding-based semantic retrieval.
 6. **RAG Pipeline:** Integrate document chunking, dense vector retrieval, and local sequence-to-sequence answer generation.
-7. **Chunk Size Experimentation:** Empirically evaluate the impact of different document chunk sizes (200, 400, and 800 characters) on retrieval precision and answer completeness.
+7. **Chunk Size Experimentation:** Empirically evaluate the impact of different document chunk sizes (200, 400, and 800 characters) on retrieval precision and answer completeness to **identify the best-performing chunk-size configuration for the selected demonstration dataset and evaluation questions**.
 
 ---
 
@@ -69,20 +69,22 @@ The demonstration knowledge base consists of **five synthetic company documents*
                     ▼
   [ Vector Indexing (ChromaDB Collection / FAISS Index) ]
                     │
-       User Query ──┴──► [ Semantic Search / Vector Similarity ]
-                                   │
-                                   ▼
+        User Query ──┴──► [ Semantic Search / Vector Similarity ]
+                                    │
+                                    ▼
                       [ Top-K Retrieved Context Chunks ]
-                                   │
-                                   ▼
-           [ Prompt Construction: Context + Question ]
-                                   │
-                                   ▼
-                   [ Language Model (T5 Seq2Seq LM) ]
-                                   │
-                                   ▼
-                 [ Grounded, Verifiable Final Answer ]
+                                    │
+                                    ▼
+            [ Prompt Construction: Context + Question ]
+                                    │
+                                    ▼
+                    [ Language Model (T5 Seq2Seq LM) ]
+                                    │
+                                    ▼
+                     [ Context-Grounded Final Answer ]
 ```
+
+**RAG provides retrieved source context to the language model, which can help ground responses in the available documentation.**
 
 ---
 
@@ -97,8 +99,8 @@ The demonstration knowledge base consists of **five synthetic company documents*
 4. **Vector Database Storage:** Populated three separate ChromaDB collections (`rag_chunks_200`, `rag_chunks_400`, `rag_chunks_800`) with chunk text, embeddings, and document source metadata.
 5. **FAISS Integration:** Implemented FAISS `IndexFlatIP` (Cosine Similarity) to demonstrate raw vector indexing alongside ChromaDB.
 6. **Semantic Querying:** Executed semantic retrieval on five benchmark questions using both distance-based (ChromaDB) and inner-product (FAISS) metrics.
-7. **Grounded Answer Generation:** Formatted retrieved passages into structured prompts and passed them to `t5-small` to generate factual answers.
-8. **Empirical Evaluation:** Evaluated all combinations across Relevance, Correctness, Completeness, and Context Grounding using an objective rubric.
+7. **Context-Grounded Answer Generation:** Formatted retrieved passages into structured prompts and passed them to `t5-small` to generate factual answers.
+8. **Empirical Evaluation:** Evaluated all combinations across Relevance, Correctness against source, Completeness, and Context Grounding using a transparent, deterministic rule-based rubric.
 
 ---
 
@@ -146,7 +148,7 @@ An **embedding** is a dense continuous vector representation where semantic rela
 
 ### Lexical (Keyword) Search vs Semantic Search:
 - **Lexical Search (BM25 / TF-IDF):** Requires exact or stemmed word token overlap. Searching for *"rules when intern is absent"* would miss passages containing *"leave request protocol"*.
-- **Semantic Search (Dense Vector):** Compares meaning in 384-dimensional embedding space. Correctly routes *"rules when intern is absent"* to `leave_policy.txt` with distance `0.7407`.
+- **Semantic Search (Dense Vector):** Compares meaning in 384-dimensional embedding space. Correctly routes *"rules when intern is absent"* to `leave_policy.txt` with distance `0.3703`.
 
 ---
 
@@ -157,41 +159,66 @@ Answer generation is handled by `t5-small` via Hugging Face `AutoModelForSeq2Seq
   ```text
   question: {user_query} context: {retrieved_chunks}
   ```
-- **Hallucination Prevention:** The model is constrained to generate answers exclusively from the supplied context. When information is omitted from retrieved text, fallback rules return: *"Information not explicitly specified in the retrieved context."*
+- **Context Grounding:** The model generates answers using the retrieved context provided in the prompt. When information is omitted from retrieved text, fallback rules return: *"Information not specified in the provided documentation."*
 
 ---
 
-## Chunk Size Experiment
+## Rule-Based Evaluation Rubric Derived from Known Facts in the Synthetic Corpus
 
-The pipeline evaluated five benchmark questions across all three chunk sizes:
+To evaluate retrieval and generation performance objectively on this training demonstration dataset without arbitrary scoring, we employ a rule-based evaluation rubric derived from known facts in the synthetic demonstration corpus:
+- **Relevance (1.0 to 5.0):** Compares query intent keywords with retrieved context and verifies retrieval of the primary authority document.
+- **Correctness against source (1.0 to 5.0):** Validates generated answer facts against known ground truth statements from the demonstration documents.
+- **Completeness (1.0 to 5.0):** Measures the proportion of expected procedural facts captured by the retrieved context.
+- **Context Grounding (1.0 to 5.0):** Verifies the percentage of answer content words derived directly from retrieved context.
+- **Overall Score (1.0 to 5.0):** Arithmetic mean of the four dimensions.
 
-1. *What is the process for submitting an internship task?*
-2. *What happens when an intern takes leave?*
-3. *What are the main steps in the training workflow?*
-4. *What should an intern complete before submitting a project?*
-5. *What are the basic onboarding requirements?*
+---
 
-### Experimental Results Summary:
+## Benchmark Response Evaluation Table
 
-| Chunk Size | Total Chunks | Overlap | Relevance (1–5) | Completeness (1–5) | Correctness (1–5) | Grounding (1–5) | Overall Score (1–5) |
+Empirical evaluation results across all 5 questions and 3 chunk sizes:
+
+| Question | Chunk Size | Top Document | Generated Answer | Relevance | Correctness | Completeness | Grounding | Overall Score |
+| :--- | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| What is the process for submitting an internship task? | 200 | `submission_guidelines.txt` | 6:00 PM IST | 4.44 | 5.00 | 3.00 | 5.00 | **4.36** |
+| What happens when an intern takes leave? | 200 | `leave_policy.txt` | they remain responsible for completing all missed technical modules | 3.33 | 5.00 | 3.00 | 5.00 | **4.08** |
+| What are the main steps in the training workflow? | 200 | `project_workflow.txt` | handle missing values, remove noise, and perform exploratory sanity checks | 3.12 | 5.00 | 2.60 | 5.00 | **3.93** |
+| What should an intern complete before submitting a project? | 200 | `submission_guidelines.txt` | validation steps | 2.89 | 3.50 | 2.60 | 5.00 | **3.50** |
+| What are the basic onboarding requirements? | 200 | `onboarding.txt` | Python (version 3.10 or higher), Visual Studio Code | 4.06 | 5.00 | 3.40 | 5.00 | **4.37** |
+| What is the process for submitting an internship task? | 400 | `submission_guidelines.txt` | task verification | 3.61 | 3.50 | 4.00 | 5.00 | **4.03** |
+| What happens when an intern takes leave? | 400 | `leave_policy.txt` | they remain responsible for completing all missed technical modules | 4.44 | 5.00 | 5.00 | 5.00 | **4.86** |
+| What are the main steps in the training workflow? | 400 | `project_workflow.txt` | Implement baseline models, engineer relevant features, and optimize model parameters | 3.44 | 5.00 | 4.20 | 5.00 | **4.41** |
+| What should an intern complete before submitting a project? | 400 | `project_workflow.txt` | the following validation steps | 4.72 | 3.50 | 4.20 | 5.00 | **4.35** |
+| What are the basic onboarding requirements? | 400 | `onboarding.txt` | introductory Python and environment verification test. - Review and acknowledge company information confidentiality and data security rules | 4.06 | 5.00 | 5.00 | 5.00 | **4.76** |
+| What is the process for submitting an internship task? | 800 | `submission_guidelines.txt` | Daily Submission Deadline | 4.72 | 5.00 | 4.00 | 5.00 | **4.68** |
+| What happens when an intern takes leave? | 800 | `leave_policy.txt` | they remain responsible for completing all missed technical modules | 4.44 | 5.00 | 5.00 | 5.00 | **4.86** |
+| What are the main steps in the training workflow? | 800 | `project_workflow.txt` | Implement baseline models, engineer relevant features, and optimize model parameters | 3.75 | 5.00 | 4.20 | 5.00 | **4.49** |
+| What should an intern complete before submitting a project? | 800 | `project_workflow.txt` | validation steps | 4.72 | 3.50 | 4.20 | 5.00 | **4.35** |
+| What are the basic onboarding requirements? | 800 | `onboarding.txt` | - Submit digital identity and internship acceptance verification | 4.06 | 5.00 | 5.00 | 5.00 | **4.76** |
+
+---
+
+## Aggregated Chunk Size Performance Comparison
+
+| Chunk Size | Total Chunks | Overlap | Average Relevance | Average Correctness | Average Completeness | Average Grounding | Average Overall Score |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **200 chars** | 71 chunks | 50 chars | 3.80 | 3.20 | 4.50 | 5.00 | **4.12** |
-| **400 chars** | 32 chunks | 50 chars | **4.80** | **4.60** | 4.50 | 5.00 | **4.72** |
-| **800 chars** | 17 chunks | 100 chars | 4.00 | 4.20 | 4.50 | 5.00 | **4.42** |
+| **200 chars** | 71 chunks | 50 chars | 3.57 | 4.70 | 2.92 | 5.00 | **4.05** |
+| **400 chars** | 32 chunks | 50 chars | 4.05 | 4.40 | 4.48 | 5.00 | **4.48** |
+| **800 chars** | 17 chunks | 100 chars | **4.34** | **4.70** | **4.48** | **5.00** | **4.63 (Best)** |
 
 ---
 
-## Best Performing Chunk Size
+## Best-Performing Chunk Size
 
-### Winner: **Chunk Size 400 Characters** (Overall Score: **4.72 / 5.00**)
+### Winner: **Chunk Size 800 Characters** (Average Overall Score: **4.63 / 5.00**)
 
 ### Empirical Findings:
-1. **Why Chunk Size 200 underperformed (Overall: 4.12, Completeness: 3.20):**  
-   A 200-character window holds only ~25–35 words. Procedural policies (such as submission requirements or onboarding checklists) span multiple sentences. Slicing at 200 characters frequently cut lists in half, resulting in incomplete context and truncated answers.
-2. **Why Chunk Size 400 performed best (Overall: 4.72, Completeness: 4.60):**  
-   A 400-character window corresponds to ~55–80 words, perfectly capturing complete operational policy clauses and bullet points without cross-topic bleeding. It achieved the highest relevance (**4.80**) and completeness (**4.60**).
-3. **Why Chunk Size 800 underperformed (Overall: 4.42, Relevance: 4.00):**  
-   An 800-character window encompasses ~120–160 words, often spanning 2–3 distinct policy subsections. While completeness remained acceptable (4.20), the presence of extraneous surrounding text diluted semantic retrieval focus, slightly reducing relevance.
+1. **Chunk Size 200 (Overall: 4.05, Completeness: 2.92):**  
+   A 200-character window holds only ~25–35 words. Procedural policies (such as multi-stage training workflows or onboarding checklists) span several sentences. Slicing at 200 characters split sentences mid-procedure, causing the lowest completeness score (**2.92**).
+2. **Chunk Size 400 (Overall: 4.48, Completeness: 4.48):**  
+   A 400-character window corresponds to ~55–80 words, roughly the length of an individual operational policy clause. It significantly improved completeness over 200 characters while maintaining strong query alignment.
+3. **Chunk Size 800 (Overall: 4.63, Relevance: 4.34, Completeness: 4.48):**  
+   An 800-character window encompasses ~120–160 words. In this demonstration corpus, 800 characters provided sufficient context window to preserve complete multi-step instructions and achieved the highest relevance (**4.34**) without truncating necessary guidelines.
 
 ---
 
@@ -206,10 +233,11 @@ The pipeline evaluated five benchmark questions across all three chunk sizes:
 
 ## Key Learnings
 
-1. **RAG Eliminates Hallucinations:** Providing retrieved ground-truth text forces the language model to answer factually.
-2. **Chunk Size Directly Dictates Performance:** Chunking is not an arbitrary parameter; selecting an optimal chunk size is critical to balancing granular retrieval with context completeness.
-3. **Embeddings Standardize Search:** Dense vectors overcome vocabulary mismatch between user questions and official documentation.
-4. **Vector Stores Simplify Metadata:** Storing source file names alongside vectors enables immediate citation and transparency.
+1. **Pretrained Models Accelerate Development:** Pretrained models reduce the need to train a model from scratch and can accelerate prototyping and development.
+2. **Context-Grounding Improves Factual Alignment:** In this experiment, providing explicit retrieved context helped keep the generated responses aligned with the demonstration documentation, illustrating the value of RAG for domain-specific question answering.
+3. **Chunk Size Directly Dictates Performance:** Chunking is not an arbitrary parameter; selecting an optimal chunk size is critical to balancing granular retrieval with context completeness.
+4. **Embeddings Standardize Search:** Dense vectors overcome vocabulary mismatch between user questions and official documentation.
+5. **Vector Stores Simplify Metadata:** Storing source file names alongside vectors enables immediate citation and transparency.
 
 ---
 
@@ -237,7 +265,7 @@ Day-16/
 │   ├── response_comparison/
 │   │   └── response_comparison.csv    # Full response comparison across questions
 │   └── evaluation_results/
-│       ├── evaluation_metrics.json    # Granular scoring metrics
+│       ├── evaluation_results.json    # Granular scoring metrics
 │       └── chunk_size_summary.txt     # Formatted empirical results summary
 │
 └── screenshots/                       # Visual execution evidence
@@ -268,4 +296,10 @@ python rag_pipeline.py
 ```bash
 jupyter notebook rag_pipeline.ipynb
 ```
-Run all cells sequentially. All 16 code cells will execute with **0 errors**.
+Run all cells sequentially. All 13 code cells will execute with **0 errors**.
+
+---
+
+## Conclusion
+
+For this demonstration dataset and evaluation set, the **800-character chunk size** provided the best observed balance between retrieval relevance and response completeness.
