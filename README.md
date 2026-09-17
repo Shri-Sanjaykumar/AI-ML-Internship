@@ -92,4 +92,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Natural Language Processing (NLP) Practice: Text Preprocessing & TF-IDF (Day 13) | Completed |
 | Weekly Mini Project: Basic Sentiment Analysis using Machine Learning (Day 14) | Completed |
 | Introduction to Large Language Models and Hugging Face (Day 15) | Completed |
+| Basic Retrieval-Augmented Generation (RAG) (Day 16) | Completed |
 | Practical AI/ML work | Upcoming |

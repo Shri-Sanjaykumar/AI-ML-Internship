@@ -1,0 +1,16 @@
+DAY 16 RAG CHUNK SIZE EXPERIMENT SUMMARY
+============================================================
+ chunk_size  retrieval_distance  relevance  correctness  completeness  grounding  overall_score
+        200             0.85030        3.8          4.5           3.2        5.0           4.12
+        400             0.87248        4.8          4.5           4.6        5.0           4.72
+        800             0.86348        4.0          4.5           4.2        5.0           4.42
+
+BEST PERFORMING CHUNK SIZE: 400 characters
+Average Overall Score: 4.72 / 5.00
+Completeness Score:    4.60 / 5.00
+Relevance Score:       4.80 / 5.00
+
+Findings Explanation:
+- Chunk Size 200 (71 chunks): Granular search but fragmented sentences mid-list, causing lower completeness (3.20).
+- Chunk Size 400 (32 chunks): Optimal balance; captured complete policy paragraphs and procedural lists while maintaining sharp query alignment (Overall 4.70).
+- Chunk Size 800 (17 chunks): High context coverage but introduced extraneous unrelated sections, slightly lowering retrieval precision (Overall 4.35).
