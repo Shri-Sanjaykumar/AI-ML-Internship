@@ -94,4 +94,6 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Introduction to Large Language Models and Hugging Face (Day 15) | Completed |
 | Basic Retrieval-Augmented Generation (RAG) (Day 16) | Completed |
 | Production-Grade RAG API with FastAPI (Day 17) | Completed |
+| Autonomous AI Agents with ReAct Planning & Tools (Day 18) | Completed |
+| Stateful Document QA Workflow with LangGraph (Day 19) | Completed |
 | Practical AI/ML work | Upcoming |
