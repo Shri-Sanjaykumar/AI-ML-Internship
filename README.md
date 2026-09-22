@@ -96,4 +96,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Production-Grade RAG API with FastAPI (Day 17) | Completed |
 | Autonomous AI Agents with ReAct Planning & Tools (Day 18) | Completed |
 | Stateful Document QA Workflow with LangGraph (Day 19) | Completed |
+| Tool Creation, Function Calling, Chaining & Error Handling (Day 20) | Completed |
 | Practical AI/ML work | Upcoming |
