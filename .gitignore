@@ -22,6 +22,7 @@ env/
 .DS_Store
 Thumbs.db
 desktop.ini
+*.zip
 
 # Environment Variables and Credentials
 .env
