@@ -98,4 +98,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Stateful Document QA Workflow with LangGraph (Day 19) | Completed |
 | Tool Creation, Function Calling, Chaining & Error Handling (Day 20) | Completed |
 | Async Programming, Middleware, Background Tasks, Dependency Injection & Versioning (Day 21) | Completed |
+| Multi-Agent AI Workflow Design & Practical Integration (Day 22) | Completed |
 | Practical AI/ML work | Upcoming |
