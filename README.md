@@ -99,4 +99,5 @@ This repository will contain my AI/ML learning notes, experiments, notebooks, an
 | Tool Creation, Function Calling, Chaining & Error Handling (Day 20) | Completed |
 | Async Programming, Middleware, Background Tasks, Dependency Injection & Versioning (Day 21) | Completed |
 | Multi-Agent AI Workflow Design & Practical Integration (Day 22) | Completed |
+| Multi-Agent System Implementation with LangGraph (Day 23) | Completed |
 | Practical AI/ML work | Upcoming |
