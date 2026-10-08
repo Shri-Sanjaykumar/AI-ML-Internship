@@ -1,103 +1,50 @@
-# AI/ML Internship — Learning & Practice Repository
+# Linkific Tasks — AI/ML Internship
 
-## 👨‍💻 Introduction
+Repository to track daily tasks, assignments, and notes during my AI/ML internship at **Linkific**.
+
+---
+
+## 👨‍💻 Intern Details
 
 - **Name:** Shri Sanjaykumar V
 - **Role:** AI/ML Intern
 - **Organization:** Linkific
-- **Internship:** AI/ML Internship
-- **Current Phase:** Training / Onboarding
-
-I am currently starting my AI/ML internship at Linkific. I am using this repository to document my day-to-day learning, practice programming, and maintain hands-on implementations as I progress through the training phase.
+- **Training Phase:** Month 1
 
 ---
 
-## 🎯 Internship Goals
+## 📌 About This Repository
 
-- Strengthen Python fundamentals for AI/ML.
-- Understand Machine Learning fundamentals.
-- Learn data handling and preprocessing.
-- Understand Deep Learning concepts.
-- Explore Generative AI.
-- Improve practical problem-solving skills.
-- Learn to use Git and GitHub effectively.
-- Build small practical AI/ML implementations as I progress.
+This repository contains day-wise folders to organize and document all internship training activities. Each day includes notes, assigned tasks, and environment/experiment details.
 
----
+### Folder Structure
+- `Day-1/` — AI/ML fundamentals, learning roadmap, and development environment setup.
+- `Day-2/` — Python fundamentals, practice exercises, student grade calculator, and simple calculator.
+- `Day-3/` — Python data structures, file handling, and Student Record Management System.
+- `Day-4/` — NumPy fundamentals, 1D/2D arrays, indexing, slicing, and Student Marks Analysis.
+- `Day-5/` — Pandas fundamentals, DataFrames, CSV loading, filtering, and summary statistics.
+- `Day-6/` — Data visualization with Matplotlib & Seaborn (Bar, Line, Histogram, Pie).
+- `Day-7/` — Week 1 Mini Project: Student Performance Analysis Dashboard (Data cleaning, analysis, and 4 visualizations).
+- `Day-8/` — Data Preprocessing & Data Cleaning (Missing value imputation, duplicate handling, column renaming, and data type conversion).
+- `Day-9/` — Exploratory Data Analysis (EDA) (Descriptive statistics, category distributions, numerical comparison, skewness analysis, time trends, and 5 business insights).
+- `Day-10/` — Machine Learning Practice: Linear Regression (ML workflow from data to prediction, 80/20 train/test split, Scikit-learn LinearRegression, R² evaluation, and regression visualization).
+- `Day-11/` — Classification Machine Learning (Classification basics, Iris dataset, Logistic Regression, Decision Tree, and accuracy comparison).
+- `Day-12/` — Classification Model Evaluation (Evaluation metrics: Accuracy, Precision, Recall, F1 Score, Confusion Matrix, and model performance comparison).
+- `Day-13/` — Natural Language Processing (NLP) Practice (Text preprocessing: Lowercasing, Tokenization, Stopword Removal, TF-IDF Vectorization, and vocabulary feature analysis).
+- `Day-14/` — Weekly Mini Project: Basic Sentiment Analysis using Machine Learning (Text classification pipeline, IMDb review dataset, TF-IDF vectorization, Logistic Regression, and model evaluation).
+- `Day-15/` — Introduction to Large Language Models and Hugging Face (AI evolution, LLM fundamentals, model hub exploration, and comparative inference across Text Generation, Sentiment Analysis, and Summarization).
+- `Day-16/` — Basic Retrieval-Augmented Generation (RAG) (Embeddings, Vector Databases, ChromaDB, FAISS, Semantic Search, Chunk Size Optimization [200 vs 400 vs 800 chars], and RAG Generation Pipeline with Seq2Seq LM).
+- `Day-17/` — Production-Grade Retrieval-Augmented Generation (RAG) Microservice with FastAPI (FastAPI REST architecture, multi-format page-aware PDF/TXT ingestion, 10MB limit, sliding-window chunking [800/100], 384-dim all-MiniLM-L6-v2 embeddings, ChromaDB cosine vector search, local T5 grounded QA, and 10 robustness/functional test validations).
+- `Day-18/` — Autonomous AI Agents: Document Research Assistant Agent (ReAct paradigm, deterministic goal planning, discrete tool usage [document_search, document_lookup, document_metadata, final_response], state machine lifecycle [INITIALIZED to FINAL_RESPONSE], sufficiency evaluation, single-pass query refinement, strict anti-hallucination guardrails, and 18 automated test validations).
+- `Day-19/` — LangGraph: Stateful Document Question-Answering Workflow (StateGraph architecture with 8 nodes, shared TypedDict state, conditional routing [init, retrieval, validation, generation], bounded retry loops [attempts <= 3], thread-scoped checkpoint memory via InMemorySaver, local dense embeddings [all-MiniLM-L6-v2], multi-turn interactive session CLI, and 31 automated test validations).
+- `Day-20/` — Tool Creation, Function Calling, Tool Chaining, and Error Handling (Modular suite of 10 tools including 4 project practicals: Database, CSV Analyzer, PDF Reader, and Company Search, dynamic live weather and search APIs, RFC 822 MIME email persistence, ToolRegistry with OpenAI JSON Schema generation, FunctionCallingEngine with intent routing, 3 multi-tool chaining pipelines, defensive error boundaries, interactive CLI, and 58 automated PyTest test validations).
+- `Day-21/` — Asynchronous Programming, Middleware, Background Tasks, Dependency Injection, API Versioning & Performance Optimization (High-throughput FastAPI microservice, non-blocking I/O with aiofiles, threadpool CPU offload, RequestLoggingMiddleware with X-Request-ID and microsecond latency tracking, thread-safe JSONL background audit logging, hierarchical Depends() security gating, URL prefix API versioning with Day 17 legacy route preservation, empirical live HTTP server benchmarking showing 20.09% latency reduction and +29.01% throughput increase, and 44 automated PyTest validations).
+- `Day-22/` — Multi-Agent AI Workflow Design & Practical Integration (Research Assistant multi-agent workflow featuring 5 specialized autonomous agent roles: ResearchAgent, AnalyzerAgent, CriticAgent, WriterAgent, and CoordinatorAgent; thread-safe SharedStateManager with role-based field mutation ownership; decoupled asynchronous MessageBus with typed AgentMessage envelopes and persistent JSONL audit trails; dynamic ExecutionPlan milestone generation; factual numerical fidelity preservation [e.g. 1.5 paid leave days]; adversarial Critic quality gate actively catching hallucinations, ungrounded numbers, and truncated clauses; circuit breakers preventing infinite loops [max_revisions = 2]; 7-column Multi-Agent Responsibility Matrix; Mermaid workflow, sequence, and state diagrams; 42 automated PyTest validations for Day 22; and full independent cross-day regression verification across Days 17, 20, and 21 with 158 total passed tests).
+- `Day-23/` — Multi-Agent System Implementation with LangGraph (Operational multi-agent research assistant built using LangGraph `StateGraph`; dual execution topologies including Company Project Practical streamlined mode [`User -> Coordinator -> Research Agent -> Writer -> Answer`] and comprehensive 5-agent cognitive-adversarial mode [`User -> Coordinator -> Research -> Analyzer -> Critic -> Writer -> Answer`]; append-only inter-agent communication channels via `operator.add` reducers; milestone progression tracking via custom `update_milestones` reducer; standardized typed `AgentMessage` envelopes with correlation ID continuity; persistent multi-agent communication log in `data/communication_log.json` and `examples/sample_interaction_trace.json`; adversarial Critic review loop with decimal-safe factual preservation [`1.5 paid leave days`, `$500 hardware allowance`, `10:00 AM-5:00 PM IST`] and circuit breaker [`max_revisions = 2`]; formal Agent Communication Flow Document, Sequence Diagram, and System Explanation specifications; 38 automated PyTest test validations for Day 23 with 100% pass rate; and full cross-day regression verification across Days 17, 20, 21, and 22).
+- `Day-24/` — Production Readiness, Testing, Logging, Docker, Environment Variables & Monitoring (Production-hardened Linkific Enterprise AI Service as a FastAPI microservice; 62 automated PyTest test validations with 100% pass rate [36 unit, 21 API, 5 regression] and 90% branch coverage; in-memory sliding window rate limiting [120 req/min per IP] with HTTP 429 and Retry-After; strict CORS whitelist stripping wildcards; production secret validator rejecting default/placeholder keys; JSON-structured rotating audit logging with X-Correlation-ID distributed tracing and ContextVar async propagation; Pydantic-Settings .env management with strict validation; multi-stage Dockerfile with non-root user security [appuser UID 10001] and container healthchecks; Prometheus metrics registry on `/metrics`, liveness probe on `/health/live`, readiness probe on `/health/ready`; Linkific Finance Automation API with PO-matching, STP, Manager, and Director approval tiers; 7-pillar 35-item formal Deployment Checklist; Production Readiness Report; cross-day regression verification across Days 17, 20, 21, 22, and 23).
+- `Day-25/` — Production AI Engineering, AI Industry Research, Cost Optimization, Token Usage & Multi-Provider Comparison (OpenAI vs Claude vs Gemini vs Groq; 1–2 page formal Research Summary citing Stanford HAI 2024 AI Index Report, Anthropic prompt caching whitepapers, DeepMind research, and Groq LPU architecture; empirical grounded comparison matrix across Cost [$/1M tokens and ₹ INR], Speed [TPS and TTFT], and Domain Accuracy [%]; 20 grounded financial reasoning test cases in `data/benchmark_dataset.json`; Token Estimator & KV-Cache breakdown engine; mathematical Cost Calculator supporting prompt caching and batch API discounts in dual USD and INR; empirical Latency Simulator; Pareto-optimal multi-objective SLA Router; Linkific enterprise invoice automation case study showing 79.5% annual cost reduction [₹463,983.92/year savings]; CLI benchmark runner with `--mode all`; 23 automated PyTest test validations with 100% pass rate).
+- `Day-26/` — Responsible AI Engineering, Bias Mitigation, Hallucination Prevention, Privacy Guardrails & Governance Guidelines (Responsible AI Case Study on Optum / Obermeyer et al. 2019 healthcare racial bias incident; formal Linkific Enterprise Responsible AI Guidelines document covering 4 pillars: Bias & Fairness, Hallucination Prevention, Privacy & PII Masking, and Human-in-the-Loop Governance; Executive Summary; operational Python Guardrail Proof-of-Concept suite featuring PrivacyMasker with reversible in-VPC surrogate rehydration, FairnessAuditor validating EEOC 4/5ths Rule Disparate Impact Ratio, and GroundingVerifier detecting ungrounded numerical hallucinations; interactive CLI runner; 24 automated PyTest test validations with 100% pass rate [18 unit/integration, 6 cross-day regression]).
+- `Day-27/` — Agile Sprint Planning & Enterprise Project Practical (FinDoc-AuditEngine: Enterprise Intelligent Financial Document Processing & Multi-Tier Audit Gateway; formal Agile Sprint Planning document with RACI matrix, 10 prioritized user stories with MoSCoW prioritization and Fibonacci story points [30 SP velocity], Mermaid Gantt delivery timeline; complete production-grade AI/ML project featuring deterministic 3-way reconciliation across Invoice, PO, and Dock GRN, unsupervised scikit-learn Isolation Forest ML anomaly detection on multivariate financial vectors [0-100 calibrated risk scoring], Responsible AI PII scrubbing for PAN, email, and bank accounts, and multi-tier corporate governance routing with dual USD/INR currency accounting standard [1 USD = ₹86.50 INR]; production FastAPI REST service with liveness/readiness probes; CLI batch audit runner; 20 automated PyTest test validations with 100% pass rate [13 unit/API, 7 cross-day regression Days 20 to 26]; 5 high-resolution terminal screenshot JPGs).
+- Future training days will be added progressively as tasks are assigned.
 
-## 📖 Current Learning
 
-- AI/ML fundamentals
-- Python (variables, data structures, functions, file handling)
-- NumPy (1D & 2D arrays, indexing, slicing, math operations)
-- Pandas (DataFrames, CSV loading, null detection, filtering, summary statistics)
-- Data Visualization (Matplotlib & Seaborn: Bar, Line, Histogram, Pie charts)
-- Applied Data Analysis (Week 1 Mini Project: Student Performance Analysis Dashboard)
-- Git & GitHub
-- Development environment setup
-
----
-
-## 🧭 Learning Direction
-
-```text
-Python → Data Handling (NumPy/Pandas) → Data Visualization (Matplotlib/Seaborn) → Machine Learning → Deep Learning → Generative AI → Practical Projects
-```
-
-> *Note: This represents my planned learning progression during the internship, not a list of completed technologies.*
-
----
-
-## 🔗 Learning References
-
-I referred to online tutorials and learning resources while getting started with AI/ML:
-
-- [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
-- [Seaborn Documentation](https://seaborn.pydata.org/)
-- [Pandas Official Documentation — DataFrame Basics](https://pandas.pydata.org/docs/user_guide/dsintro.html#dataframe)
-- [NumPy Official Documentation — Getting Started](https://numpy.org/doc/stable/user/absolute_beginners.html)
-- [Programming with Mosh](https://www.youtube.com/@programmingwithmosh)
-- [Krish Naik](https://www.youtube.com/@krishnaik06)
-- [CampusX](https://www.youtube.com/@CampusX-official)
-- [Codebasics](https://www.youtube.com/@codebasics)
-- [Tech With Tim](https://www.youtube.com/@TechWithTim)
-- [freeCodeCamp](https://www.youtube.com/@freecodecamp)
-
----
-
-## 📌 Repository Purpose
-
-This repository will contain my AI/ML learning notes, experiments, notebooks, and practical work as the internship progresses. Practice scripts and exercises will be added progressively as each module is covered.
-
----
-
-## 📊 Progress
-
-| Stage | Status |
-| :--- | :--- |
-| Internship onboarding | Completed |
-| AI/ML fundamentals | Completed |
-| Development environment | Set up |
-| Python fundamentals (Day 2) | Completed |
-| Data structures & file handling (Day 3) | Completed |
-| NumPy fundamentals (Day 4) | Completed |
-| Pandas & basic data analysis (Day 5) | Completed |
-| Data visualization (Day 6) | Completed |
-| Week 1 Mini Project: Student Performance Analysis (Day 7) | Completed |
-| Data preprocessing & data cleaning (Day 8) | Completed |
-| Exploratory data analysis (Day 9) | Completed |
-| Machine learning practice: Linear Regression (Day 10) | Completed |
-| Classification practice: Logistic Regression & Decision Tree (Day 11) | Completed |
-| Classification model evaluation: Metrics & Confusion Matrix (Day 12) | Completed |
-| Natural Language Processing (NLP) Practice: Text Preprocessing & TF-IDF (Day 13) | Completed |
-| Weekly Mini Project: Basic Sentiment Analysis using Machine Learning (Day 14) | Completed |
-| Introduction to Large Language Models and Hugging Face (Day 15) | Completed |
-| Basic Retrieval-Augmented Generation (RAG) (Day 16) | Completed |
-| Production-Grade RAG API with FastAPI (Day 17) | Completed |
-| Autonomous AI Agents with ReAct Planning & Tools (Day 18) | Completed |
-| Stateful Document QA Workflow with LangGraph (Day 19) | Completed |
-| Tool Creation, Function Calling, Chaining & Error Handling (Day 20) | Completed |
-| Async Programming, Middleware, Background Tasks, Dependency Injection & Versioning (Day 21) | Completed |
-| Multi-Agent AI Workflow Design & Practical Integration (Day 22) | Completed |
-| Multi-Agent System Implementation with LangGraph (Day 23) | Completed |
-| Practical AI/ML work | Upcoming |
